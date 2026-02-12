@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lifetime Spent</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div>
+          <p class="eyebrow">Lifetime edition</p>
+          <h1>Spent: One Whole Life</h1>
+          <p class="subtitle">
+            Make decisions each day and try to reach retirement without running out of
+            money, health, or energy.
+          </p>
+        </div>
+        <div class="summary">
+          <div>
+            <span class="label">Age</span>
+            <span id="age" class="value">18</span>
+          </div>
+          <div>
+            <span class="label">Date</span>
+            <span id="current-date" class="value">Sep 1</span>
+          </div>
+          <div>
+            <span class="label">Savings</span>
+            <span id="savings" class="value">$2,000</span>
+          </div>
+          <div>
+            <span class="label">Health</span>
+            <span id="health" class="value">80</span>
+          </div>
+          <div>
+            <span class="label">Energy</span>
+            <span id="energy" class="value">85</span>
+          </div>
+          <div>
+            <span class="label">Income</span>
+            <span id="income" class="value">$2,200</span>
+          </div>
+          <div>
+            <span class="label">Expenses</span>
+            <span id="expenses" class="value">$1,800</span>
+          </div>
+          <div>
+            <span class="label">Job</span>
+            <span id="job-title" class="value">Unemployed</span>
+          </div>
+          <div>
+            <span class="label">Position</span>
+            <span id="position-title" class="value">-</span>
+          </div>
+          <div>
+            <span class="label">Salary</span>
+            <span id="salary" class="value">$0</span>
+          </div>
+          <div>
+            <span class="label">College</span>
+            <span id="college-name" class="value">-</span>
+          </div>
+          <div>
+            <span class="label">Major</span>
+            <span id="major-name" class="value">-</span>
+          </div>
+          <div>
+            <span class="label">Degree</span>
+            <span id="degree-name" class="value">None</span>
+          </div>
+          <div>
+            <span class="label">Location</span>
+            <span id="location-name" class="value">Midwest City</span>
+          </div>
+          <div>
+            <span class="label">Properties</span>
+            <span id="properties-owned" class="value">No primary home • Rentals: 0</span>
+          </div>
+          <div>
+            <span class="label">Invested</span>
+            <span id="invested-total" class="value">$0</span>
+          </div>
+          <div>
+            <span class="label">Investment Mix</span>
+            <span id="investment-mix" class="value">None</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="life">
+          <div class="card">
+            <h2 id="chapter-title">Day 1 • Age 13y 0d • Teen years</h2>
+            <p id="chapter-text">
+              Your teen years shape your future. School, summer jobs, and early responsibilities start building your path.
+            </p>
+            <div class="bars">
+              <div>
+                <span>Security</span>
+                <div class="bar"><div id="security-bar" class="fill"></div></div>
+              </div>
+              <div>
+                <span>Joy</span>
+                <div class="bar"><div id="joy-bar" class="fill"></div></div>
+              </div>
+              <div>
+                <span>Stress</span>
+                <div class="bar"><div id="stress-bar" class="fill"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="card choices">
+            <h3>What do you choose today?</h3>
+            <div id="choices" class="choice-grid"></div>
+          </div>
+          <div class="card choices">
+            <h3>Education & Career</h3>
+            <p>Choose your college tier and major, then pick eligible jobs. Degree-required jobs unlock after graduation.</p>
+            <div class="choice-grid">
+              <select id="college-select"></select>
+              <select id="major-select"></select>
+              <button id="apply-education" type="button">Enroll in college</button>
+              <select id="job-select"></select>
+              <select id="position-select"></select>
+              <button id="apply-career" type="button">Set career</button>
+            </div>
+          </div>
+
+
+          <div class="card choices">
+            <h3>Housing</h3>
+            <p>Choose where to live and buy homes. Location changes salary/expenses. Rentals create income.</p>
+            <div class="choice-grid">
+              <select id="housing-market-select"></select>
+              <button id="move-location-btn" type="button">Move here</button>
+              <button id="buy-primary-btn" type="button">Buy primary home</button>
+              <button id="buy-rental-btn" type="button">Buy rental property</button>
+            </div>
+          </div>
+          <div class="card choices">
+            <h3>Investments</h3>
+            <p>Move money from cash savings into savings accounts, CDs, or index funds.</p>
+            <div class="choice-grid">
+              <select id="investment-type">
+                <option value="savingsAccount">High-yield Savings</option>
+                <option value="cdAccount">CD</option>
+                <option value="indexFund">Index Fund</option>
+              </select>
+              <input id="investment-amount" type="number" min="100" step="100" value="500" />
+              <button id="invest-btn" type="button">Invest</button>
+              <button id="withdraw-btn" type="button">Withdraw</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="timeline">
+          <h3>Your Life Timeline</h3>
+          <ol id="timeline-list"></ol>
+        </section>
+      </main>
+
+      <footer>
+        <button id="restart" class="ghost">Restart Life</button>
+        <p id="status">Survive day-by-day until age 78 with savings above $0.</p>
+      </footer>
+    </div>
+
+    <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+      <div class="overlay-card">
+        <h2 id="ending-title">You made it!</h2>
+        <p id="ending-text"></p>
+        <button id="play-again">Play again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
