@@ -54,7 +54,7 @@ header {
 
 .summary {
   display: grid;
-  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
   gap: 16px;
   background: var(--card);
   padding: 20px;

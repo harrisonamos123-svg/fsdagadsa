@@ -1,155 +1,196 @@
-const chapters = [
+const stages = [
   {
-    range: "Age 18–22",
+    range: [18, 22],
     title: "Starting out",
     text:
-      "Your first years out of school shape your whole life. A roommate offers a cheap place to live. A dream job pays little but builds skills.",
+      "Your first years out of school shape your whole life. Focus on stability, learning, and building your network.",
+    income: 2200,
+    expenses: 1800,
     security: 35,
     joy: 55,
     stress: 40,
     options: [
       {
-        title: "Take the dream job",
-        description: "+Skills, -Savings now, +Joy",
-        effects: { savings: -1500, health: 2, energy: 4, security: 5, joy: 12, stress: 5 },
-        timeline:
-          "Chose passion over pay, gaining experience but tightening the budget.",
+        title: "Take a low-paying dream job",
+        description: "+Joy, +Skills, -Savings",
+        effects: { savings: -600, health: 1, energy: 2, security: 3, joy: 8, stress: 3 },
+        timeline: "Chased a passion role and learned fast.",
       },
       {
-        title: "Take the stable job",
-        description: "+Savings, +Security, -Joy",
-        effects: { savings: 2200, health: -1, energy: -2, security: 12, joy: -4, stress: 4 },
-        timeline: "Built financial stability with a steady paycheck.",
+        title: "Choose a stable employer",
+        description: "+Savings, +Security",
+        effects: { savings: 400, health: -1, energy: -1, security: 6, joy: -2, stress: 2 },
+        timeline: "Built a reliable foundation with steady pay.",
+      },
+      {
+        title: "Move in with roommates",
+        description: "+Savings, -Stress",
+        effects: { savings: 500, health: 0, energy: 1, security: 2, joy: 3, stress: -2 },
+        timeline: "Cut costs and made memories in a shared place.",
       },
       {
         title: "Go back to school",
-        description: "-Savings, +Health, +Joy",
-        effects: { savings: -2400, health: 5, energy: -3, security: 3, joy: 10, stress: 6 },
-        timeline: "Invested in education, trading money for future options.",
+        description: "+Joy, +Health, -Savings",
+        effects: { savings: -900, health: 3, energy: -2, security: 2, joy: 6, stress: 4 },
+        timeline: "Invested in education to widen future options.",
       },
     ],
   },
   {
-    range: "Age 23–30",
+    range: [23, 30],
     title: "Building momentum",
     text:
-      "Bills grow, but so do opportunities. You can push for a promotion or keep a calmer life.",
+      "Bills grow, but so do opportunities. You can push for promotion or keep a calmer life.",
+    income: 3200,
+    expenses: 2400,
     security: 45,
     joy: 50,
     stress: 45,
     options: [
       {
-        title: "Chase promotion",
-        description: "+Savings, +Security, +Stress",
-        effects: { savings: 8500, health: -4, energy: -6, security: 14, joy: -2, stress: 10 },
-        timeline: "Worked longer hours to secure a promotion and higher pay.",
+        title: "Chase a promotion",
+        description: "+Savings, +Stress",
+        effects: { savings: 900, health: -2, energy: -4, security: 8, joy: -2, stress: 6 },
+        timeline: "Worked longer hours to climb faster.",
       },
       {
-        title: "Balanced lifestyle",
-        description: "+Health, +Joy, steady savings",
-        effects: { savings: 4000, health: 6, energy: 3, security: 6, joy: 8, stress: -4 },
-        timeline: "Protected your wellbeing while building a steady career.",
+        title: "Keep work-life balance",
+        description: "+Health, +Joy",
+        effects: { savings: 300, health: 4, energy: 3, security: 4, joy: 5, stress: -4 },
+        timeline: "Protected your wellbeing while building slowly.",
       },
       {
         title: "Start a side hustle",
-        description: "+Savings, -Energy, +Joy",
-        effects: { savings: 6000, health: -2, energy: -8, security: 8, joy: 5, stress: 6 },
-        timeline: "Took on extra work to widen your income streams.",
+        description: "+Savings, -Energy",
+        effects: { savings: 700, health: -1, energy: -5, security: 6, joy: 2, stress: 4 },
+        timeline: "Added an extra income stream after hours.",
+      },
+      {
+        title: "Move to a new city",
+        description: "+Joy, -Savings",
+        effects: { savings: -500, health: 1, energy: -2, security: 3, joy: 6, stress: 3 },
+        timeline: "Relocated for a fresh start and new contacts.",
       },
     ],
   },
   {
-    range: "Age 31–40",
+    range: [31, 40],
     title: "Family and commitments",
     text:
       "Choices now affect more people. Housing, caregiving, and career peaks arrive together.",
+    income: 4600,
+    expenses: 3600,
     security: 55,
     joy: 52,
     stress: 55,
     options: [
       {
         title: "Buy a home",
-        description: "-Savings now, +Security, +Stress",
-        effects: { savings: -12000, health: -2, energy: -4, security: 16, joy: 4, stress: 8 },
+        description: "+Security, -Savings",
+        effects: { savings: -1200, health: -1, energy: -2, security: 8, joy: 3, stress: 5 },
         timeline: "Committed to a mortgage for long-term stability.",
       },
       {
         title: "Care for family",
-        description: "+Joy, -Savings, -Energy",
-        effects: { savings: -5000, health: -3, energy: -8, security: 4, joy: 10, stress: 6 },
-        timeline: "Put loved ones first, even when it cost time and money.",
+        description: "+Joy, -Energy",
+        effects: { savings: -600, health: -2, energy: -6, security: 4, joy: 7, stress: 4 },
+        timeline: "Put loved ones first, even when it was hard.",
       },
       {
         title: "Relocate for growth",
-        description: "+Savings, +Joy, +Stress",
-        effects: { savings: 10000, health: -1, energy: -3, security: 12, joy: 6, stress: 7 },
-        timeline: "Moved to a new city to grow your opportunities.",
+        description: "+Savings, +Stress",
+        effects: { savings: 900, health: -1, energy: -2, security: 6, joy: 4, stress: 5 },
+        timeline: "Moved for a better role and bigger paycheck.",
+      },
+      {
+        title: "Delay big purchases",
+        description: "+Savings, -Joy",
+        effects: { savings: 800, health: 0, energy: 1, security: 5, joy: -3, stress: 2 },
+        timeline: "Stayed cautious with money to build reserves.",
       },
     ],
   },
   {
-    range: "Age 41–50",
+    range: [41, 50],
     title: "Midlife recalibration",
     text:
       "Your body and mind need care. You can coast, pivot, or keep climbing.",
+    income: 5200,
+    expenses: 4100,
     security: 65,
     joy: 50,
     stress: 52,
     options: [
       {
         title: "Take a sabbatical",
-        description: "-Savings, +Health, +Joy",
-        effects: { savings: -8000, health: 10, energy: 8, security: -4, joy: 12, stress: -8 },
-        timeline: "Pressed pause to recover and reconnect with yourself.",
+        description: "+Health, +Joy, -Savings",
+        effects: { savings: -1000, health: 6, energy: 5, security: -2, joy: 8, stress: -5 },
+        timeline: "Pressed pause to recover and reconnect.",
       },
       {
         title: "Stay the course",
-        description: "+Savings, +Security, +Stress",
-        effects: { savings: 12000, health: -3, energy: -6, security: 10, joy: -3, stress: 8 },
-        timeline: "Held steady in your career to keep finances strong.",
+        description: "+Savings, +Stress",
+        effects: { savings: 1200, health: -2, energy: -3, security: 6, joy: -2, stress: 5 },
+        timeline: "Held steady to keep finances strong.",
       },
       {
         title: "Switch careers",
-        description: "-Savings, +Joy, +Stress",
-        effects: { savings: -6000, health: 2, energy: -4, security: 4, joy: 10, stress: 6 },
-        timeline: "Took a risk to find work that felt more meaningful.",
+        description: "+Joy, -Savings",
+        effects: { savings: -700, health: 2, energy: -2, security: 2, joy: 7, stress: 4 },
+        timeline: "Took a risk to find more meaningful work.",
+      },
+      {
+        title: "Prioritize wellness",
+        description: "+Health, -Savings",
+        effects: { savings: -400, health: 5, energy: 4, security: 1, joy: 3, stress: -3 },
+        timeline: "Invested in routines that keep you healthy.",
       },
     ],
   },
   {
-    range: "Age 51–60",
+    range: [51, 60],
     title: "Preparing for retirement",
     text:
       "Retirement is visible, but health can wobble. You can protect your future or live for today.",
+    income: 5600,
+    expenses: 4400,
     security: 72,
     joy: 48,
     stress: 48,
     options: [
       {
         title: "Max out retirement",
-        description: "+Savings, +Security, -Joy",
-        effects: { savings: 18000, health: -2, energy: -4, security: 12, joy: -4, stress: 4 },
+        description: "+Savings, -Joy",
+        effects: { savings: 1400, health: -1, energy: -2, security: 7, joy: -3, stress: 3 },
         timeline: "Socked away money to make retirement safer.",
       },
       {
         title: "Downsize and travel",
-        description: "+Joy, -Savings, +Health",
-        effects: { savings: -9000, health: 4, energy: 5, security: 4, joy: 12, stress: -3 },
-        timeline: "Traded a bigger home for memories and freedom.",
+        description: "+Joy, -Savings",
+        effects: { savings: -800, health: 3, energy: 3, security: 3, joy: 8, stress: -2 },
+        timeline: "Traded space for memories and freedom.",
       },
       {
         title: "Support adult kids",
-        description: "-Savings, +Joy, -Energy",
-        effects: { savings: -7000, health: -2, energy: -6, security: 2, joy: 8, stress: 5 },
+        description: "+Joy, -Savings",
+        effects: { savings: -900, health: -1, energy: -4, security: 2, joy: 6, stress: 4 },
         timeline: "Helped your kids launch, even when it stretched you.",
+      },
+      {
+        title: "Reduce working hours",
+        description: "+Health, -Savings",
+        effects: { savings: -500, health: 4, energy: 3, security: -1, joy: 4, stress: -2 },
+        timeline: "Shifted to fewer hours to protect your health.",
       },
     ],
   },
   {
-    range: "Age 61–78",
+    range: [61, 78],
     title: "Retirement years",
     text:
       "Now you live with the results. Focus on stability, community, or enjoying your time.",
+    income: 2800,
+    expenses: 2600,
     security: 80,
     joy: 45,
     stress: 40,
@@ -157,24 +198,32 @@ const chapters = [
       {
         title: "Community volunteering",
         description: "+Joy, +Health",
-        effects: { savings: -2000, health: 6, energy: 3, security: 2, joy: 10, stress: -2 },
-        timeline: "Found purpose by giving back to your community.",
+        effects: { savings: -200, health: 4, energy: 2, security: 2, joy: 6, stress: -2 },
+        timeline: "Found purpose by giving back locally.",
       },
       {
         title: "Live frugally",
-        description: "+Savings, +Security, -Joy",
-        effects: { savings: 5000, health: -1, energy: -2, security: 8, joy: -3, stress: 2 },
+        description: "+Savings, -Joy",
+        effects: { savings: 600, health: -1, energy: -1, security: 5, joy: -3, stress: 2 },
         timeline: "Kept expenses low to stretch your savings.",
       },
       {
         title: "Enjoy the bucket list",
-        description: "+Joy, -Savings, -Energy",
-        effects: { savings: -8000, health: -2, energy: -6, security: -2, joy: 12, stress: 4 },
+        description: "+Joy, -Savings",
+        effects: { savings: -900, health: -1, energy: -4, security: -1, joy: 7, stress: 3 },
         timeline: "Chased experiences while you still could.",
+      },
+      {
+        title: "Move closer to family",
+        description: "+Joy, +Security",
+        effects: { savings: -400, health: 1, energy: 0, security: 4, joy: 5, stress: -1 },
+        timeline: "Resettled to stay connected with loved ones.",
       },
     ],
   },
 ];
+
+const retirementAge = 78;
 
 const state = {
   age: 18,
@@ -184,7 +233,6 @@ const state = {
   security: 35,
   joy: 55,
   stress: 40,
-  chapterIndex: 0,
   timeline: [],
   ended: false,
 };
@@ -194,6 +242,8 @@ const ui = {
   savings: document.getElementById("savings"),
   health: document.getElementById("health"),
   energy: document.getElementById("energy"),
+  income: document.getElementById("income"),
+  expenses: document.getElementById("expenses"),
   chapterTitle: document.getElementById("chapter-title"),
   chapterText: document.getElementById("chapter-text"),
   securityBar: document.getElementById("security-bar"),
@@ -213,6 +263,18 @@ const clamp = (value, min = 0, max = 100) => Math.max(min, Math.min(max, value))
 
 const formatMoney = (amount) =>
   amount.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+
+const getStageForAge = (age) =>
+  stages.find((stage) => age >= stage.range[0] && age <= stage.range[1]);
+
+const shuffle = (items) => {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+};
 
 const updateBars = () => {
   ui.securityBar.style.width = `${clamp(state.security)}%`;
@@ -237,59 +299,72 @@ const updateTimeline = () => {
   });
 };
 
-const renderChapter = () => {
-  const chapter = chapters[state.chapterIndex];
-  if (!chapter) {
+const renderYear = () => {
+  if (state.ended) {
+    return;
+  }
+  const stage = getStageForAge(state.age);
+  if (!stage) {
     endGame();
     return;
   }
 
-  ui.chapterTitle.textContent = `${chapter.range}: ${chapter.title}`;
-  ui.chapterText.textContent = chapter.text;
+  ui.chapterTitle.textContent = `Age ${state.age}: ${stage.title}`;
+  ui.chapterText.textContent = stage.text;
+  ui.income.textContent = formatMoney(stage.income);
+  ui.expenses.textContent = formatMoney(stage.expenses);
+
+  state.security = stage.security;
+  state.joy = stage.joy;
+  state.stress = stage.stress;
+
   ui.choices.innerHTML = "";
-  chapter.options.forEach((option) => {
+  const options = shuffle(stage.options).slice(0, 3);
+  options.forEach((option) => {
     const button = document.createElement("button");
     button.className = "choice";
     button.type = "button";
     button.innerHTML = `<h4>${option.title}</h4><p>${option.description}</p>`;
-    button.addEventListener("click", () => applyChoice(option));
+    button.addEventListener("click", () => applyChoice(option, stage));
     ui.choices.appendChild(button);
   });
 
-  state.security = chapter.security;
-  state.joy = chapter.joy;
-  state.stress = chapter.stress;
   updateStats();
 };
 
-const applyChoice = (option) => {
+const applyChoice = (option, stage) => {
   if (state.ended) {
     return;
   }
   const effects = option.effects;
-  state.savings += effects.savings;
+  const yearlyNet = stage.income - stage.expenses;
+
+  state.savings += yearlyNet + effects.savings;
   state.health = clamp(state.health + effects.health);
   state.energy = clamp(state.energy + effects.energy);
   state.security = clamp(state.security + effects.security);
   state.joy = clamp(state.joy + effects.joy);
   state.stress = clamp(state.stress + effects.stress);
 
-  const chapter = chapters[state.chapterIndex];
-  state.timeline.push(`${chapter.range}: ${option.timeline}`);
-  state.age = chapter.range.includes("–")
-    ? parseInt(chapter.range.split("–")[1].trim(), 10)
-    : state.age + 5;
+  state.timeline.unshift(`Age ${state.age}: ${option.timeline} (Net ${formatMoney(yearlyNet + effects.savings)})`);
+  state.age += 1;
 
-  state.chapterIndex += 1;
   updateTimeline();
   updateStats();
   checkEndConditions();
-  renderChapter();
+  if (!state.ended) {
+    renderYear();
+  }
 };
 
 const checkEndConditions = () => {
   if (state.savings < 0 || state.health <= 0 || state.energy <= 0) {
     endGame(true);
+    return;
+  }
+
+  if (state.age > retirementAge) {
+    endGame(false);
   }
 };
 
@@ -303,7 +378,7 @@ const endGame = (failed = false) => {
   } else {
     ui.endingTitle.textContent = "You reached retirement";
     ui.endingText.textContent =
-      "You made it through a whole lifetime. Reflect on the path you took and see if you can retire with even more stability next time.";
+      "You made it through a whole lifetime. See how different choices could improve your retirement security.";
   }
 };
 
@@ -316,17 +391,16 @@ const resetGame = () => {
     security: 35,
     joy: 55,
     stress: 40,
-    chapterIndex: 0,
     timeline: [],
     ended: false,
   });
   ui.overlay.classList.add("hidden");
-  ui.status.textContent = "Reach age 78 with savings above $0 to retire.";
+  ui.status.textContent = `Reach age ${retirementAge} with savings above $0 to retire.`;
   updateTimeline();
-  renderChapter();
+  renderYear();
 };
 
 ui.restart.addEventListener("click", resetGame);
 ui.playAgain.addEventListener("click", resetGame);
 
-renderChapter();
+resetGame();
