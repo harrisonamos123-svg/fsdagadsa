@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lifetime Spent</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div>
+          <p class="eyebrow">Lifetime edition</p>
+          <h1>Spent: One Whole Life</h1>
+          <p class="subtitle">
+            Make decisions each year and try to reach retirement without running out of
+            money, health, or energy.
+          </p>
+        </div>
+        <div class="summary">
+          <div>
+            <span class="label">Age</span>
+            <span id="age" class="value">18</span>
+          </div>
+          <div>
+            <span class="label">Savings</span>
+            <span id="savings" class="value">$2,000</span>
+          </div>
+          <div>
+            <span class="label">Health</span>
+            <span id="health" class="value">80</span>
+          </div>
+          <div>
+            <span class="label">Energy</span>
+            <span id="energy" class="value">85</span>
+          </div>
+          <div>
+            <span class="label">Income</span>
+            <span id="income" class="value">$2,200</span>
+          </div>
+          <div>
+            <span class="label">Expenses</span>
+            <span id="expenses" class="value">$1,800</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="life">
+          <div class="card">
+            <h2 id="chapter-title">Age 18: Starting out</h2>
+            <p id="chapter-text">
+              Your first years out of school shape your whole life. A roommate offers a
+              cheap place to live. A dream job pays little but builds skills.
+            </p>
+            <div class="bars">
+              <div>
+                <span>Security</span>
+                <div class="bar"><div id="security-bar" class="fill"></div></div>
+              </div>
+              <div>
+                <span>Joy</span>
+                <div class="bar"><div id="joy-bar" class="fill"></div></div>
+              </div>
+              <div>
+                <span>Stress</span>
+                <div class="bar"><div id="stress-bar" class="fill"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="card choices">
+            <h3>What do you choose this phase?</h3>
+            <div id="choices" class="choice-grid"></div>
+          </div>
+        </section>
+
+        <section class="timeline">
+          <h3>Your Life Timeline</h3>
+          <ol id="timeline-list"></ol>
+        </section>
+      </main>
+
+      <footer>
+        <button id="restart" class="ghost">Restart Life</button>
+        <p id="status">Reach age 78 with savings above $0 to retire.</p>
+      </footer>
+    </div>
+
+    <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+      <div class="overlay-card">
+        <h2 id="ending-title">You made it!</h2>
+        <p id="ending-text"></p>
+        <button id="play-again">Play again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
