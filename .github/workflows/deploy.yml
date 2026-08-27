@@ -26,6 +26,16 @@ jobs:
         uses: actions/checkout@v6
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Add Seterra-style dots
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          s=s.replace('</style>', '.seterra-dot{fill:#333;stroke:#fff;stroke-width:.7;pointer-events:none}</style>', 1)
+          s=s.replace('</body>', '<script src="dots.js"></script></body>', 1)
+          p.write_text(s)
+          PY
       - name: Upload quiz
         uses: actions/upload-pages-artifact@v4
         with:
